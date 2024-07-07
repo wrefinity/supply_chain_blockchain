@@ -10,7 +10,6 @@ interface ProductDetailsProps {
 const ProductDetails: FC<ProductDetailsProps> = ({ productId }) => {
     const [product, setProduct] = useState<any>(null);
 
-    console.log('productId:', productId);
     useEffect(() => {
         const fetchProductDetails = async () => {
             try {
