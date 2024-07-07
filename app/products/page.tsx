@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const page = () => {
+type Props = {}
+
+const Product = (props: Props) => {
   return (
-    <div>
-     Testings 
-    </div>
+    <div>Product</div>
   )
 }
 
-export default page
+export default Product

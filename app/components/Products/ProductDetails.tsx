@@ -1,4 +1,5 @@
 // components/ProductDetails.tsx
+'use client'
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -9,6 +10,7 @@ interface ProductDetailsProps {
 const ProductDetails: FC<ProductDetailsProps> = ({ productId }) => {
     const [product, setProduct] = useState<any>(null);
 
+    console.log('productId:', productId);
     useEffect(() => {
         const fetchProductDetails = async () => {
             try {

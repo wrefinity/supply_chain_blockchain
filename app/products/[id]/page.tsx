@@ -1,3 +1,4 @@
+'use client'
 // import ButtonActions from '@/app/components/Products/ButtonActions'
 // import React from 'react'
 
@@ -29,20 +30,21 @@
 // export default ProductDetail
 
 // pages/product/[id].tsx
-import { useRouter } from 'next/router';
+import { useRouter, useSearchParams } from 'next/navigation';
 import ProductDetails from '../../components/Products/ProductDetails';
 import ProductStateChange from '../../components/Products/ProductStateChange';
 
-const ProductPage = () => {
+const ProductPage = ({params}: {params: {id: any}}) => {
     const router = useRouter();
-    const { id } = router.query;
+    // const searchParams = useSearchParams();
+    // const { id } = searchParams;
 
-    if (!id) return <div>Loading...</div>;
+    if (!params.id) return <div>Loading...</div>;
 
     return (
         <div className="product-page">
-            <ProductDetails productId={parseInt(id as string, 10)} />
-            <ProductStateChange productId={parseInt(id as string, 10)} />
+            <ProductDetails productId={parseInt(params.id as string, 10)} />
+            <ProductStateChange productId={parseInt(params.id as string, 10)} />
         </div>
     );
 };
